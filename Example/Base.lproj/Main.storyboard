@@ -96,6 +96,9 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lastLineFillPercent">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="nMj-pU-5wJ">
@@ -195,6 +198,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="BEI-dU-kr2"/>
                     <connections>
+                        <outlet property="avatarImage" destination="nMj-pU-5wJ" id="9fa-Z7-vYi"/>
                         <outlet property="colorSelectedView" destination="iGp-rp-t1d" id="0Zm-9d-jRU"/>
                         <outlet property="skeletonTypeSelector" destination="xOL-Sq-r4i" id="yTr-8L-I4Y"/>
                         <outlet property="switchAnimated" destination="vz0-qg-GcZ" id="d2R-8x-lRb"/>
@@ -203,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-594.39999999999998" y="85.007496251874073"/>
+            <point key="canvasLocation" x="-482" y="-6"/>
         </scene>
     </scenes>
     <resources>

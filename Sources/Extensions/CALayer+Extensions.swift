@@ -36,10 +36,16 @@ extension CALayer {
         return sublayers?.filter { $0.name == CALayer.skeletonSubLayersName } ?? [CALayer]()
     }
     
-    func addMultilinesLayers(lines: Int, type: SkeletonType) {
+    func addMultilinesLayers(lines: Int, type: SkeletonType, lastLineFillPercent: Int) {
         let numberOfSublayers = calculateNumLines(maxLines: lines)
         for index in 0..<numberOfSublayers {
-            let layer = SkeletonLayerFactory().makeMultilineLayer(withType: type, for: index, width: Int(bounds.width))
+            var width = bounds.width
+            
+            if index == numberOfSublayers-1 && numberOfSublayers != 1 {
+                width = width * CGFloat(lastLineFillPercent)/100;
+            }
+            
+            let layer = SkeletonLayerFactory().makeMultilineLayer(withType: type, for: index, width: width)
             addSublayer(layer)
         }
     }
